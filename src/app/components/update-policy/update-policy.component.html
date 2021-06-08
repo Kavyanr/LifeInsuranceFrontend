@@ -1,0 +1,158 @@
+<!-- <div  fxLayout="row" fxLayoutAlign="center center">
+    <mat-card>  
+   <h2 align = "center" text-color = "cyan"><b>Add Policy</b></h2>
+        <div fxLayout="column" fxLayoutAlign="center center">
+             
+                <form  (ngSubmit)="onSubmit()">
+              
+                <div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                           
+                                <mat-label >Policy Name</mat-label>
+                                <input  placeholder="Name" autocomplete="off">
+                               </div><br>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                           
+                                <mat-label >Description</mat-label>
+                                <input  placeholder="Description" autocomplete="off">
+                      </div><br>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                          
+                                <mat-label >duration</mat-label>
+                                <input   placeholder="duration" autocomplete="new-password">
+                        </div><br>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                           
+                                <mat-label >Price</mat-label>
+                                 <input  placeholder="Price" autocomplete="off"> 
+                        </div><br>
+                       
+                </div>
+                <div class="form-group">
+                    <button type = "submit"  class="btn btn-primary" class="register-button">update</button>
+                            <div>
+                            
+                                
+                            </div>
+                       </div>
+                
+            </form>
+       
+    
+  
+  </div>  -->
+
+
+  <!-- <div class="container">
+        <h1>Update Post</h1>
+      
+        <a href="#" routerLink="viewpolicy" class="btn btn-primary">Back</a><br>
+            
+        <form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="form-group">
+        <label for="policyName">Policy Name</label><br>
+        <input  formControlName="policyName" id="policyName" type="text"  [(ngModel)]="policy.policyName" class="form-control">
+        <div *ngIf="f.policyName.touched && f.policyName.invalid" class="alert alert-danger">
+            <div *ngIf="f.policyName.errors.required">Policy Name is required.</div>
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <label for="description">description</label>
+        <textarea 
+            formControlName="description"
+            id="description" 
+            type="text" 
+            [(ngModel)]="policy.description"
+            class="form-control">
+        </textarea>
+        <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+            <div *ngIf="f.description.errors.required">description is required.</div>
+        </div>
+    </div>
+
+     <div class="form-group">
+        <label for="duration">duration</label>
+        <textarea 
+            formControlName="duration"
+            id="duration" 
+            type="number" 
+            [(ngModel)]="policy.duration"
+            class="form-control">
+        </textarea>
+        <div *ngIf="f.duration.touched && f.duration.invalid" class="alert alert-danger">
+            <div *ngIf="f.duration.errors.required">duration is required.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="price">price</label>
+        <textarea 
+            formControlName="price"
+            id="price" 
+            type="number" 
+            [(ngModel)]="policy.price"
+            class="form-control">
+        </textarea>
+        <div *ngIf="f.price.touched && f.price.invalid" class="alert alert-danger">
+            <div *ngIf="f.price.errors.required">price is required.</div>
+        </div>
+    </div>
+    
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+</form> -->
+
+
+<div  fxLayout="row" fxLayoutAlign="center center">
+        <mat-card>  
+       <h2 align = "center" text-color = "cyan"><b>Add Policy</b></h2>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                 
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                   
+                    <div>
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <mat-form-field class="example-container" appearance="outline" style="padding-top: 25px;">
+                                    <mat-label for="policyName">Policy Name</mat-label>
+                                    <input matInput formControlName="policyName" id="policyName" type="text"  [(ngModel)]="policy.policyName" class="form-control">
+                                    <mat-error *ngIf="f.policyName.errors">{{'Enter policy Name'}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                           <div fxLayout="row" fxLayoutAlign="center center">
+                                <mat-form-field class="example-container" appearance="outline" style="padding-top: 25px;">
+                                    <mat-label for="description">Description</mat-label>
+                                    <input matInput formControlName="description" id="description" type="text"  [(ngModel)]="policy.description" class="form-control">
+                                    <mat-error *ngIf="f.description.errors">{{'Enter description'}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                             <div fxLayout="row" fxLayoutAlign="center center">
+                                <mat-form-field class="example-container" appearance="outline" style="padding-top: 25px;">
+                                    <mat-label for="duration">Duration</mat-label>
+                                    <input matInput formControlName="duration" id="duration" type="number"  [(ngModel)]="policy.duration" class="form-control">
+                                    <mat-error *ngIf="f.duration.errors">{{'Enter duration'}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <mat-form-field class="example-container" appearance="outline" style="padding-top: 25px;">
+                                    <mat-label for="price">Price</mat-label>
+                                    <input matInput formControlName="price" id="price" type="number"  [(ngModel)]="policy.price" class="form-control">
+                                    <mat-error *ngIf="f.price.errors">{{'Enter price'}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                           
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+                                <div>
+                                
+                                    
+                                </div>
+                           </div>
+                    
+                </form>
+           
+           
+      
+      </div>
+ 

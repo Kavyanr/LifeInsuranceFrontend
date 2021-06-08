@@ -1,0 +1,48 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.example-container > * {
+  width: 15%;
+}
+.register-button {
+  background-color: orange !important;
+  color: orange;
+  font-size: medium;
+  height: 20px;
+  width: 50%;
+  
+}
+
+.mat-card{
+  background-color: whitesmoke;
+  height: 50%;
+  width: 450px;
+  margin: auto;
+}
+
+
+
+.register-btn-text{
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  margin: 8px 0;
+}
+
+.card {
+margin: auto;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 4px 11px;
+  background-color: #f44336;
+}

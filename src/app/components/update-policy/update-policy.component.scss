@@ -1,0 +1,61 @@
+.bor{
+    border: hidden;
+    outline: none;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .creation{ background-color: whitesmoke;
+  }
+  .example-container > * {
+    width: 15%;
+  }
+  .register-button {
+    background-color: whitesmoke !important;
+    color: rgb(0 0 0 / 70%);
+    height: 20px;
+    width: 15%;
+    float: right;
+  }
+  
+  .mat-card{
+    background-color:whitesmoke;
+    height: 500px;
+    width: 450px;
+    margin: 50px;
+    align-content: center;
+  }
+  
+  
+  
+ 
+  
+  .card {
+  margin: auto;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 4px 11px;
+    background-color: rgb(0 0 0 / 12%);
+  }
+
+  .container{
+     align-content: center; 
+  }
+
+.form-group{
+  align-content: center;
+  width: 60%;
+  padding: 12px 20px;
+  margin: 9px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+  
+  

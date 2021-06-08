@@ -1,0 +1,45 @@
+<form>
+  <div class="move" *ngFor="let note of notes">
+    <mat-card   style="width: 570px;" >
+     
+       
+      <mat-card-header>
+        <mat-card-title (click)=openDialog(note)>
+          {{note.policyName}}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content (click)=openDialog(note)>
+        {{note.description}}
+      </mat-card-content>
+
+      <mat-card-content (click)=openDialog(note)>
+        {{note.CustomerName}}
+      </mat-card-content>
+
+      <mat-card-content (click)=openDialog(note)>
+        {{note.price}}
+      </mat-card-content>
+      <!-- <div>
+        
+        <div class="form-group">
+          <button type = "submit" [disabled]="loading" class="btn btn-primary" class="register-button" (ngSubmit) = >Delete</button>
+                  <div>
+                  
+                      <a [routerLink]="['/viewpolicy']" class="btn btn-link" class="cancelbtn">Back</a>
+                  </div>
+             </div>
+       
+      </div> -->
+      <button  mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button  mat-menu-item (click)=deleteNoteForever(note)>
+          Delete 
+        </button>
+      </mat-menu>
+    </mat-card>
+ 
+  </div>
+  </form>

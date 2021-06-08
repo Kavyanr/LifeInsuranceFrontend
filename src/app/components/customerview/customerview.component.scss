@@ -1,0 +1,112 @@
+.move{
+    padding-left: 100px;
+    padding-top: 3%;
+    
+}
+.updatebtn{
+    width: 100;
+    padding: 5px 0px;
+    background-color: darkcyan;
+    float: left;
+    padding-top: 6px;
+    margin-top: -18px; 
+}
+.btn {
+  width: auto;
+  padding: 5px 0px;
+  background-color: darkcyan;
+  float: left;
+  padding-top: 6px;
+  margin-top: -18px;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 5px 0px;
+    background-color: darkcyan;
+    float: right;
+    padding-top: 6px;
+    margin-top: -18px;
+  }
+  .example-card {
+    max-width: 300px;
+    margin-top: -25px;
+    float: left;
+    display: inline;
+    margin: 12px;
+    // justify-content: center;
+     
+}
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+ 
+mat-sidenav {
+    width: 250px;
+}
+ 
+main {
+    padding: 10px;
+}
+/* padding left and right is for search and reset icons */
+.slinput input {
+    padding:10px;
+    width:80%;
+    border:1px solid #ccc;
+    padding-left:31px;
+    padding-right:30px;
+    color:black;
+    font-family: arial,sans-serif;
+    font-size: 16px;
+  }
+  /* Remove IE10's “clear field” X button */
+  .slinput input::-ms-clear {
+      display: none;
+  }
+  .slinput input:focus {
+    border:1px solid #4d90fe;
+  }
+  
+  /* left side icon style (search icon) */
+  .slinput .left-icon {
+    position:absolute;
+    left:10px;
+    top:11px;
+  }
+  .slinput .fa {
+    color:rgb(15, 14, 14);
+    font-size: 16px;
+  }
+  .slinput .fa-close {
+    color:#ccc;
+  }
+  
+  .slinput .active {
+    color:#555;
+  }
+  
+  
+  
+  
+  /* right side icon style (search icon) */
+  .slinput .right-icon {
+    position:absolute;
+    right:10px;
+    top:11px;
+    cursor:pointer;
+  }
+  .slinput {
+    
+    position:relative;
+    width:100%;
+  }
+
+  .content{
+      width: 400px;
+      height: 200px;
+      margin: 10px;
+      border: 1px solid #555;
+    }
+    .example-card{
+      display: inline-block;
+    }

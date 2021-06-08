@@ -1,0 +1,74 @@
+<div  fxLayout="row" fxLayoutAlign="center center">
+    <mat-card >  
+   <h2 align = "center" text-color = "cyan"><b>Registration Form</b></h2>
+        <div fxLayout="column" fxLayoutAlign="center center">
+             
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+               <div align="center">
+                        <!-- <img src="./assets/image/registration.png" style="height:150px; width: 150px"> -->
+                    </div>
+                <div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" style="padding-top: 40px;">
+                                <mat-label for="name">Name</mat-label>
+                                <input matInput formControlName="name" placeholder="Name" autocomplete="off">
+                                <mat-error *ngIf="f.name.errors">{{'Enter Name'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline">
+                                <mat-label for="email">Email ID</mat-label>
+                                <input matInput formControlName="email" placeholder="email" autocomplete="off">
+                                <mat-error *ngIf="f.email.errors">{{'Enter Email ID'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" >
+                                <mat-label for="password">Password</mat-label>
+                                <input  matInput type="password" formControlName="password"  placeholder="Password" autocomplete="new-password">
+                                <mat-error *ngIf="f.password.errors">{{'Enter Password'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" >
+                                <mat-label for="dateOfBirth">Date Of Birth</mat-label>
+                                <input matInput formControlName="dateOfBirth" placeholder="Birth Date" autocomplete="off">
+                                <mat-error *ngIf="f.dateOfBirth.errors">{{'Enter your birth date'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" >
+                                <mat-label for="city">City</mat-label>
+                                <input matInput formControlName="city" placeholder="city" autocomplete="off">
+                                <mat-error *ngIf="f.city.errors">{{'Enter your city'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-form-field class="example-container" appearance="outline" >
+                                <mat-label for="gender">Gender</mat-label>
+                                 <input matInput formControlName="gender" placeholder="Gender" autocomplete="off"> 
+                                <mat-error *ngIf="f.gender.errors">{{'Enter Name'}}</mat-error>
+                            </mat-form-field>
+                        </div>
+                       
+                      
+                </div>
+                <div class="form-group">
+                    <button type = "submit" [disabled]="loading" class="btn btn-primary" class="button">Register</button>
+                            <div>
+                              <br>
+                                Do have an account?
+                                <br>
+                                <a [routerLink]="['/login']" class="btn btn-link" class="cancelbtn">Cancel</a>
+                            </div>
+                       </div>
+                
+            </form>
+       
+       
+  
+</div>
+
+
+
+

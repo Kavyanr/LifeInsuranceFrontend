@@ -1,0 +1,87 @@
+<div fxLayout= "row" fxLayoutAlign= "stretch">
+  <mat-toolbar class="fixed-header" fxFlex= "100%" fxFlex.xs = "100%" fxFlex.sm ="100%" fxFlex.md= "100%">
+     <mat-toolbar-row>
+         <button *ngIf= "!abc" aria-label="Toggle sidenav" mat-icon-button (click) ="drawer.toggle()" matToolTip="Menu">
+             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+         </button>
+         <button *ngIf=abc mat-icon-button [matMenuTriggerFor]="menu">
+             <mat-icon>arrow_drop_down</mat-icon>
+         </button>
+
+         <mat-menu #menu= "matMenu">
+             <button mat-menu-item (click)= "navigateNotes()">
+                 <mat-icon>note_add</mat-icon>
+                 <span>Add Policy</span>
+             </button>
+           
+             <button mat-menu-item (click)= "navigateUpdate()">
+                <mat-icon>edit</mat-icon>
+                <span>Edit Policy</span>
+            </button>
+            <button mat-menu-item (click)= "navigateTrash()">
+                <mat-icon>Trash</mat-icon>
+                <span>Delete</span>
+            </button>
+         </mat-menu>
+&nbsp;&nbsp;
+
+   <span>
+       <b>
+       <font size= "11" face="Forte">Life Insurance</font></b>
+   </span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class ="slinput" ng-init= "">
+      <i class= "fa fa-search left-icon"></i>
+      <input type="search" placeholder="Search here" ng-model= "searchInputVal" />
+      <i ng-class="{'fa' : true, 'fa-close' : true, 'right-icon: true, active : (searchInputVal.lenght >0)}" ng-click="searchInputVal= ''"></i>
+  </div>
+
+
+  <a mat-button routerLink= "/home" routerLinkActive="active" matTooltip = "Refresh">
+ <mat-icon>refresh</mat-icon>
+</a>
+
+&nbsp;&nbsp;&nbsp;
+<button mat-button [matMenuTriggerFor] = "user" matTooltip= "Google account">
+    <mat-icon> Account_circle</mat-icon>
+</button>
+<mat-menu #user="matMenu">
+    <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <a mat-button  *ngIf= "httpService.loggedIn()" (click)= "httpService.logOut()"><span>Logout</span></a>
+    </button>
+</mat-menu>
+     </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+
+<mat-divider></mat-divider>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #drawer mode="side" opened role="navigation">
+       <mat-nav-list *ngIf=!def>
+          
+        <button mat-menu-item (click)= "navigateNotes()">
+            <mat-icon>Notes</mat-icon>
+            <span>Policy</span>
+        </button>
+       
+        <!-- <button mat-menu-item  (click)= "navigateUpdate()">
+            <mat-icon>edit</mat-icon>
+            <span>Edit Policy</span>
+        </button> -->
+   <mat-divider></mat-divider>
+
+   <button mat-menu-item (click)= "navigateTrash()">
+    <mat-icon>delete</mat-icon>
+    <span>Delete</span>
+</button>
+
+       </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-policy></app-policy>
+      </mat-sidenav-content>
+</mat-sidenav-container> 
+

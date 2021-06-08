@@ -1,0 +1,26 @@
+<div class="list">
+    <h2 >Policy Details</h2> 
+    
+    <hr/>
+    <div *ngIf="policy">
+        <div>
+            <label><b>Policy Id: </b></label> {{policy.policyId}}
+          </div>
+      <div>
+        <label><b>Policy Name: </b></label> {{policy.policyName}}
+      </div>
+      <div>
+        <label><b>Description: </b></label> {{policy.description}}
+      </div>
+      <div>
+        <label><b>Duration: </b></label> {{policy.duration}}
+      </div> 
+      <div>
+        <label><b>Price: </b></label> {{policy.price}}
+      </div>  
+    </div>
+    
+    <br>
+    <br>
+    <button (click)="buyPolicy(policy)" class="btn btn-info" style="margin-left: 10px">Add</button>
+    </div>

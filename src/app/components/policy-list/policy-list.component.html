@@ -1,0 +1,74 @@
+ <div fxLayout= "row" fxLayoutAlign= "stretch">
+  <mat-toolbar class="fixed-header" fxFlex= "100%" fxFlex.xs = "100%" fxFlex.sm ="100%" fxFlex.md= "100%">
+     <mat-toolbar-row>
+         <button *ngIf= "!abc" aria-label="Toggle sidenav" mat-icon-button (click) ="drawer.toggle()" matToolTip="Menu">
+             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+         </button>
+         <button *ngIf=abc mat-icon-button [matMenuTriggerFor]="menu">
+             <mat-icon>arrow_drop_down</mat-icon>
+         </button>
+
+          <!-- <mat-menu #menu= "matMenu">
+             <button mat-menu-item (click)= "navigateNotes()">
+                 <mat-icon>note_add</mat-icon>
+                 <span>Add Policy</span>
+             </button>  -->
+           
+           
+&nbsp;&nbsp;
+
+   <span>
+       <b>
+       <font size= "11" face="Forte">Life Insurance</font></b>
+   </span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+  <div class ="slinput" ng-init= "">
+      <i class= "fa fa-search left-icon"></i>
+      <input type="search" placeholder="Search here" ng-model= "searchInputVal" />
+      <i ng-class="{'fa' : true, 'fa-close' : true, 'right-icon: true, active : (searchInputVal.lenght >0)}" ng-click="searchInputVal= ''"></i>
+  </div>
+
+
+  <a mat-button routerLink= "/home" routerLinkActive="active" matTooltip = "Refresh">
+ <mat-icon>refresh</mat-icon>
+</a>
+
+&nbsp;&nbsp;&nbsp;
+<button mat-button [matMenuTriggerFor] = "user" matTooltip= "Google account">
+    <mat-icon> Account_circle</mat-icon>
+</button>
+<mat-menu #user="matMenu">
+    <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <a mat-button routerLink="/homePage"><span>Logout</span></a>
+    </button>
+</mat-menu>
+     
+
+
+
+<!-- <mat-divider></mat-divider> -->
+<div class="list">
+<h2 >Policy Details</h2> 
+
+<hr/>
+<div *ngIf="policy">
+  <div>
+    <label><b>Policy Name: </b></label> {{policy.policyName}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{policy.description}}
+  </div>
+  <div>
+    <label><b>Duration: </b></label> {{policy.duration}}
+  </div> 
+  <div>
+    <label><b>Price: </b></label> {{policy.price}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Policy List</button><br>
+</div>

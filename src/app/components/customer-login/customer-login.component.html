@@ -1,0 +1,49 @@
+<div fxLayout= "row" fxLayoutAlign= "stretch">
+    <mat-toolbar class="fixed-header" fxFlex= "100%" fxFlex.xs = "100%" fxFlex.sm ="100%" fxFlex.md= "100%">
+      <span >
+        <b>
+        <font size= "11" face="Forte">Life Insurance</font></b>
+       
+    </span>
+    
+   &nbsp;&nbsp;&nbsp;
+  <div fxLayoutAlign="stretch" ></div>
+    <mat-card class="login-card" fxFlex="0 1 20px">
+      <!-- <img src="./assets/image/keep-512.png" style="width: 200px;height:200px;"> -->
+      <h2><b>Login</b></h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class="form-group">
+        <div >
+          <mat-form-field appearance="outline">
+            <mat-label for="email">Email ID</mat-label>
+            <input matInput placeholder="Enter the Email ID" formControlName="email" class="form-control">
+  
+            <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.email.errors.required">EmailId is required</mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+  
+          <mat-form-field appearance="outline">
+            <mat-label for="password">Password</mat-label>
+            <input matInput placeholder="Enter the Password" [type]="hide ? 'password' : 'text'"
+              formControlName="password" class="form-control">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.password.errors.required">Password is required</mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div >
+          <button color="btn-primary" [disabled]="loading" class="btn btn-primary">Login</button>
+         
+         
+          <div> Not yet registered?
+          
+            <a [routerLink]="['/customer']" class="btn btn-link" class="cancelbtn">sign up</a></div>
+        </div>
+      </form>
+    </mat-card>
+   
+    </mat-toolbar>
+  </div>

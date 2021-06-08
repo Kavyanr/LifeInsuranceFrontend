@@ -1,0 +1,60 @@
+
+        <div  fxLayout="row" fxLayoutAlign="center center">
+            <mat-card>  
+           <h2 align = "center" text-color = "cyan"><b>Add Policy</b></h2>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                     
+                        <form [formGroup]="createPolicyForm" (ngSubmit)="onSubmit(createPolicyForm.value)">
+                       <div align="center">
+                                <!-- <img src="./assets/image/registration.png" style="height:150px; width: 150px"> -->
+                            </div>
+                        <div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <mat-form-field class="example-container" appearance="outline" style="padding-top: 25px;">
+                                        <mat-label for="policyName">Policy Name</mat-label>
+                                        <input matInput formControlName="policyName" placeholder="Name" autocomplete="off">
+                                        <mat-error *ngIf="f.policyName.errors">{{'Enter policy Name'}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <mat-form-field class="example-container" appearance="outline">
+                                        <mat-label for="description">Description</mat-label>
+                                        <input matInput formControlName="description" placeholder="Description" autocomplete="off">
+                                        <mat-error *ngIf="f.description.errors">{{'Enter Description'}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <mat-form-field class="example-container" appearance="outline" >
+                                        <mat-label for="duration">duration</mat-label>
+                                        <input  matInput  formControlName="duration"  placeholder="duration" autocomplete="new-password">
+                                        <mat-error *ngIf="f.duration.errors">{{'Enter Customer Name'}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <mat-form-field class="example-container" appearance="outline" >
+                                        <mat-label for="price">Price</mat-label>
+                                         <input matInput formControlName="price" placeholder="Price" autocomplete="off"> 
+                                        <mat-error *ngIf="f.price.errors">{{'Enter price'}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                               
+                        </div>
+                        <div class="form-group">
+                            <button type = "submit" [disabled]="loading" class="btn btn-primary" class="register-button">Buy</button>
+                                    <div>
+                                    
+                                        
+                                    </div>
+                               </div>
+                        
+                    </form>
+               
+               
+          
+          </div>
+  
+
+
+
+
+          
